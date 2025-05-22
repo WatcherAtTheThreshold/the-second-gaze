@@ -13,7 +13,7 @@ body {
   z-index: 0;
 }
 
-.mist-overlay {
+/*.mist-overlay {
   background-size: 600px auto;
   opacity: 0.9;
   position: fixed;
@@ -21,6 +21,20 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;  /* 👈 this is key */
+  animation: mistScroll 180s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}*/
+
+.mist-overlay {
+  background-color: rgba(255, 0, 0, 0.3); /* DEBUG ONLY */
+  background-size: 600px auto;
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   animation: mistScroll 180s linear infinite;
   pointer-events: none;
   z-index: -1;
