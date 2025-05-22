@@ -135,14 +135,14 @@ section.gallery {
   border-radius: 12px;
   overflow: hidden;
   background: #ffffff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   position: relative;
 }
 
 
 .artwork:hover {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 
 .artwork img {
