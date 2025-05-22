@@ -124,6 +124,7 @@ section.gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start; /* prevent stretch! */
   gap: 2rem;
   padding: 3rem 2rem;
   position: relative;
