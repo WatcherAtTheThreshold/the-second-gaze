@@ -16,7 +16,7 @@ body {
 .mist-overlay {
   background: url('../images/mist.png') repeat;
   background-size: 600px auto;
-  opacity: 0.6;
+  opacity: 0.9;
   position: fixed;
   top: 0;
   left: 0;
