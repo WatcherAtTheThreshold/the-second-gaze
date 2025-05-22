@@ -4,6 +4,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #2e2b29;
   overflow-x: hidden;
+  position: relative;       /* 👈 sets stacking context */
+  z-index: 0;               /* 👈 allows z-index -1 to appear below */
 }
 
 /*.page-wrapper {
