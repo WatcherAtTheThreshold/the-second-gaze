@@ -131,7 +131,7 @@ section.gallery {
 }
 
 .artwork {
-  max-width: 400px;
+  width: 400px; /* consistent width */
   border-radius: 12px;
   overflow: hidden;
   background: #ffffff;
@@ -140,14 +140,17 @@ section.gallery {
   position: relative;
 }
 
+
 .artwork:hover {
   transform: scale(1.02);
 }
 
 .artwork img {
-  width: 100%;
   display: block;
+  width: 100%;
+  height: auto; /* preserve natural proportions */
 }
+
 
 .caption {
   padding: 1rem;
