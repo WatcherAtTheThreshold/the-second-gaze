@@ -131,13 +131,14 @@ section.gallery {
 }
 
 .artwork {
-  width: 400px; /* consistent width */
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
   border-radius: 12px;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
   transition: transform 0.3s ease;
-  position: relative;
 }
 
 
@@ -145,20 +146,32 @@ section.gallery {
   transform: scale(1.15);
 }
 
-.artwork img {
+.artwork-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  width: 100%;
+}
+
+.artwork-image img {
   display: block;
   width: 100%;
-  height: auto; /* preserve natural proportions */
+  height: auto;
 }
+
 
 
 .caption {
   padding: 1rem;
+  margin-top: 0.5rem;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   color: #5a504a;
   text-align: center;
   background: #fdfaf6;
+  border-radius: 0 0 12px 12px;
+  width: 100%;
 }
 
 footer {
