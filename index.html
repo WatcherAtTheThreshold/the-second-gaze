@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
+<body data-mist="mist1.png">
   <div class="mist-overlay"></div>
   <div class="page-wrapper">
     <header>
@@ -41,5 +42,10 @@
       © 2025 Shannon Hunt | In collaboration with <a href="https://watcheratthethreshold.github.io/sketchy-ponderings/">Sketchy Ponderings</a>
     </footer>
   </div>
+  <script>
+  const mistOverlay = document.querySelector('.mist-overlay');
+  const mistFile = document.body.dataset.mist || 'mist1.png';
+  mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
+</script>
 </body>
 </html>
