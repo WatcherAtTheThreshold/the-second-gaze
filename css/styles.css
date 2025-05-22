@@ -138,7 +138,7 @@ section.gallery {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
 }
 
 
