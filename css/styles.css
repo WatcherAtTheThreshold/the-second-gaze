@@ -23,7 +23,7 @@ body {
   background-color: rgba(255, 0, 0, 0.0); /* Set to 0.0 or remove if you don't want a red tint. Remove entirely once working. */
   background-size: 600px auto;
   opacity: 0.9;
-  position: absolute; /* CORRECTED: Changed from fixed to absolute */
+    position: absolute; /* ✅ better than fixed for preventing scroll jump */
   top: 0;
   left: 0;
   width: 100%; /* CORRECTED: Changed from 100vw to 100% to fit parent */
