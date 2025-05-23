@@ -155,7 +155,7 @@ section.gallery {
     rgba(255, 255, 255, 0) 100%
   );
   background-size: 200% 100%; /* <<<<< ADD THIS BACK! */
-  /* REMOVE this line: background-position: -100% 0; */
+  background-position: -100% 0; /* <<< THIS IS KEY */
   transform: skewX(-20deg);
   z-index: 2;
   pointer-events: none;
