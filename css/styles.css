@@ -132,7 +132,9 @@ section.gallery {
 }
 
 .artwork:hover {
-  transform: scale(1.15);
+  /*transform: scale(1.15);*/
+  transform: translateY(-8px) scale(1.10);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 .artwork-image {
