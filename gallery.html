@@ -76,6 +76,12 @@
   const mistOverlay = document.querySelector('.mist-overlay');
   const mistFile = document.body.dataset.mist || 'mist1.png';
   mistOverlay.style.backgroundImage = `url('../images/${mistFile}')`;
+
+
+	 // Force reflow to help apply background
+  mistOverlay.style.display = 'none';
+  void mistOverlay.offsetHeight; // void ensures it's evaluated as a statement
+  mistOverlay.style.display = 'block';
 </script>
 </body>
 </html>
