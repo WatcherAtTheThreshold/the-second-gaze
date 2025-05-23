@@ -107,25 +107,6 @@ main.light-section {
   z-index: 2; /* CORRECTED: Added z-index to ensure main content is above mist */
 }
 
-.floating-words {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.3rem;
-  color: rgba(155,155,155,1);
-  animation: float-words 20s ease-in-out infinite;
-  pointer-events: none;
-  white-space: nowrap;
-  z-index: 15; /* Ensure floating words are on top of everything */
-}
-
-@keyframes float-words {
-  0%   { transform: translateX(-60%) translateY(0); opacity: 0.3; }
-  50%  { transform: translateX(-40%) translateY(-15px); opacity: 0.5; }
-  100% { transform: translateX(-30%) translateY(-30px); opacity: 0.6; }
-}
 
 section.gallery {
   display: flex;
