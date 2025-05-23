@@ -35,7 +35,7 @@ body {
   z-index: -1;
 }*/
 
-/*.mist-overlay {                /*Newest One <----- */
+.mist-overlay {                /*Newest One <----- */
   background-color: rgba(255, 0, 0, 0.3); /* DEBUG ONLY */
   background-size: 600px auto;
   opacity: 0.9;
@@ -47,11 +47,11 @@ body {
   animation: mistScroll 180s linear infinite;
   pointer-events: none;
   z-index: -1;
-}*/
-
-.mist-overlay {
-  background-image: url('../images/mist1.png');
 }
+
+/*.mist-overlay {
+  background-image: url('../images/mist1.png');
+}*/
 
 @keyframes mistScroll {
   from { background-position: 0 0; }
