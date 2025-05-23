@@ -154,15 +154,14 @@ section.gallery {
     rgba(255, 255, 255, 0.4) 50%,
     rgba(255, 255, 255, 0) 100%
   );
-  background-size: 200% 100%; /* NEW */
-  background-position: -100% 0; /* NEW */
+  background-size: 200% 100%; /* Keep this, but remove background-position */
   transform: skewX(-20deg);
   z-index: 2;
   pointer-events: none;
 }
 
 .artwork:hover .artwork-image::after {
-  animation: shimmer 1.25s ease-in-out;
+  animation: shimmer 1.25s ease-in-out forwards; /* Added 'forwards' to keep the end state */
 }
 
 .artwork-image img {
@@ -176,10 +175,10 @@ section.gallery {
 
 @keyframes shimmer {
   0% {
-    background-position: -500px 0;
+    background-position: -100% 0; /* Start off-screen to the left */
   }
   100% {
-    background-position: 500px 0;
+    background-position: 200% 0; /* End off-screen to the right */
   }
 }
 
