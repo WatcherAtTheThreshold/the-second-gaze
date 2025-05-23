@@ -151,7 +151,7 @@ section.gallery {
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.6) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   background-size: 200% 100%; /* Keep this, but remove background-position */
