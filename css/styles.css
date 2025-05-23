@@ -217,4 +217,26 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(17, 24, 39, 0.9);
+  color: #e5ded8;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
 /* Removed the extra closing brace here */
