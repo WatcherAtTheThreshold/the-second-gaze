@@ -154,6 +154,8 @@ section.gallery {
     rgba(255, 255, 255, 0.4) 50%,
     rgba(255, 255, 255, 0) 100%
   );
+  background-size: 200% 100%; /* NEW */
+  background-position: -100% 0; /* NEW */
   transform: skewX(-20deg);
   z-index: 2;
   pointer-events: none;
