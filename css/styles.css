@@ -119,14 +119,6 @@ section.gallery {
   z-index: 5; /* Ensure gallery is above mist */
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -500px 0;
-  }
-  100% {
-    background-position: 500px 0;
-  }
-}
 
 .artwork {
   width: 400px;
@@ -177,6 +169,16 @@ section.gallery {
   height: auto;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
 }
 
 .caption {
