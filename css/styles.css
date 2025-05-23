@@ -4,8 +4,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #2e2b29;
   overflow-x: hidden;
-  position: relative;       /* 👈 sets stacking context */
-  z-index: 0;               /* 👈 allows z-index -1 to appear below */
+  position: relative;       /* sets stacking context */
+  z-index: 0;               /* allows z-index -1 to appear below */
 }
 
 /*.page-wrapper {
@@ -19,7 +19,7 @@ body {
   background: #f1ebe6;
   min-height: 100vh;
   position: relative;
-  z-index: 1; /* 👈 raise this from 0 to 1 */
+  z-index: 1; /* Keep this to ensure content stacks above body */
 }
 
 /*.mist-overlay {
@@ -35,18 +35,18 @@ body {
   z-index: -1;
 }*/
 
-.mist-overlay {                /*Newest One <----- */
-  background-color: rgba(255, 0, 0, 0.3); /* DEBUG ONLY */
+.mist-overlay {
+  /* background-color: rgba(255, 0, 0, 0.3); /* REMOVE THIS DEBUG LINE */
   background-size: 600px auto;
   opacity: 0.9;
-  position: fixed;
+  position: absolute; /* CHANGED from fixed to absolute */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%; /* Changed from 100vw to 100% to fit parent */
+  height: 100%;  /* Changed from 100vh to 100% to fit parent */
   animation: mistScroll 180s linear infinite;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0; /* CHANGED: Set to 0 so it's behind `header`, `main`, `footer` which will have higher z-indexes or stack context */
 }
 
 /*.mist-overlay {
@@ -64,7 +64,7 @@ header {
   text-align: center;
   padding: 4rem 1rem 2rem;
   position: relative;
-  z-index: 10;
+  z-index: 10; /* Keep this high to ensure it's on top of mist */
 }
 
 .nav-menu {
