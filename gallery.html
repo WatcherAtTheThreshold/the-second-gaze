@@ -58,17 +58,22 @@
     <footer>
       © 2025 Shannon Hunt | In collaboration with <a href="https://watcheratthethreshold.github.io/sketchy-ponderings/">Sketchy Ponderings</a>
     </footer>
-  </div> <script>
-// This targets the single mist layer set at the top of the page
-  const mistOverlay = document.querySelector('.mist-overlay');
-  const mistFile = document.body.dataset.mist || 'mist2.webp';
-  mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
+  </div> 
+  <script>
+    // Mist background
+    const mistOverlay = document.querySelector('.mist-overlay');
+    const mistFile = document.body.dataset.mist || 'mist2.webp';
+    mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
+    mistOverlay.style.display = 'none';
+    void mistOverlay.offsetHeight;
+    mistOverlay.style.display = 'block';
 
-
-	 // Force reflow to help apply background
-  mistOverlay.style.display = 'none';
-  void mistOverlay.offsetHeight; // void ensures it's evaluated as a statement
-  mistOverlay.style.display = 'block';
-</script>
+    // Show/hide scroll-to-top arrow
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.style.display = 'none';
+  </script>
 </body>
 </html>
