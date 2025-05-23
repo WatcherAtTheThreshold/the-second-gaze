@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body data-mist="mist2.webp"> 
+<body id="top" data-mist="mist2.webp"> 
   <div class="page-wrapper"> <div class="mist-overlay"></div> <header>
       <nav class="nav-menu">
         <a href="index.html">Home</a>
@@ -58,17 +58,23 @@
     <footer>
       © 2025 Shannon Hunt | In collaboration with <a href="https://watcheratthethreshold.github.io/sketchy-ponderings/">Sketchy Ponderings</a>
     </footer>
-  </div> <script>
-// This targets the single mist layer set at the top of the page
-  const mistOverlay = document.querySelector('.mist-overlay');
-  const mistFile = document.body.dataset.mist || 'mist2.webp';
-  mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
+  </div> 
+  <a href="#top" class="back-to-top" title="Back to top">↑</a>
+  <script>
+    // Mist background
+    const mistOverlay = document.querySelector('.mist-overlay');
+    const mistFile = document.body.dataset.mist || 'mist2.webp';
+    mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
+    mistOverlay.style.display = 'none';
+    void mistOverlay.offsetHeight;
+    mistOverlay.style.display = 'block';
 
-
-	 // Force reflow to help apply background
-  mistOverlay.style.display = 'none';
-  void mistOverlay.offsetHeight; // void ensures it's evaluated as a statement
-  mistOverlay.style.display = 'block';
-</script>
+    // Show/hide scroll-to-top arrow
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.style.display = 'none';
+  </script>
 </body>
 </html>
