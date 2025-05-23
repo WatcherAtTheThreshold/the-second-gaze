@@ -162,7 +162,7 @@ section.gallery {
 }
 
 .artwork:hover .artwork-image::after {
-  animation: shimmer 1.25s ease-in-out forwards; /* Keep 'forwards' to ensure it stays at the end state */
+  animation: shimmer 4.5s ease-in-out forwards; /* Keep 'forwards' to ensure it stays at the end state */
 }
 
 .artwork-image img {
