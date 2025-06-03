@@ -360,7 +360,7 @@
       </div>
 
       <div class="container" id="cards-content">
-        <h1 class="cards-title">Draw Your Cards</h1>
+        <h1 class="cards-title" id="draw-title">Draw Your Cards</h1>
         <p class="intro">Let intuition guide you through the veil of mystery.<br>Choose your path and discover what awaits.</p>
         
         <div class="toggle-container">
@@ -377,7 +377,7 @@
     </footer>
   </div>
   
-  <a href="#cards-content" class="back-to-top" title="Back to top">↑</a>
+  <a href="#" class="back-to-top" title="Back to top">↑</a>
   
   <script>
     // Cards functionality (no mist overlay for this page)
@@ -469,10 +469,10 @@
       document.getElementById('threeCardBtn').classList.remove('active');
       drawCards();
       
-      // Smooth scroll to cards content
-      document.getElementById('cards-content').scrollIntoView({
+      // Smooth scroll to draw title at top of viewport
+      document.getElementById('draw-title').scrollIntoView({
         behavior: 'smooth',
-        block: 'center'
+        block: 'start'
       });
     });
 
@@ -482,10 +482,10 @@
       document.getElementById('oneCardBtn').classList.remove('active');
       drawCards();
       
-      // Smooth scroll to cards content
-      document.getElementById('cards-content').scrollIntoView({
+      // Smooth scroll to draw title at top of viewport
+      document.getElementById('draw-title').scrollIntoView({
         behavior: 'smooth',
-        block: 'center'
+        block: 'start'
       });
     });
 
