@@ -9,15 +9,26 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
-    /* Cards page specific styling for main content */
-    .cards-main {
+    /* Body background for entire cards page */
+    body {
       background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);
       background-attachment: fixed;
       color: #3b2f2f;
+      font-family: 'Crimson Text', 'Georgia', serif;
+    }
+
+    /* Header and footer transparent to show body gradient */
+    header, footer {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Cards page specific styling for main content */
+    .cards-main {
       min-height: 80vh;
       position: relative;
       overflow-x: hidden;
-      font-family: 'Crimson Text', 'Georgia', serif;
     }
 
     .cards-main::before {
@@ -277,6 +288,35 @@
       50% { opacity: 1; transform: scale(1.5); }
     }
 
+    /* Back to top button matching toggle button style */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(145deg, #f4e7d3, #e6d3b7);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 0.8rem 1rem;
+      font-size: 1.2rem;
+      font-family: 'Crimson Text', serif;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 50px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: all 0.4s ease;
+      color: #5d4e37;
+      text-decoration: none;
+      display: none;
+      z-index: 1000;
+    }
+
+    .back-to-top:hover {
+      background: linear-gradient(145deg, #f2dcc0, #dcc7a8);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+      text-decoration: none;
+      color: #5d4e37;
+    }
+
     @media (max-width: 768px) {
       .three-card-layout {
         flex-direction: column;
@@ -319,7 +359,7 @@
         <div class="star"></div>
       </div>
 
-      <div class="container">
+      <div class="container" id="cards-content">
         <h1 class="cards-title">Draw Your Cards</h1>
         <p class="intro">Let intuition guide you through the veil of mystery.<br>Choose your path and discover what awaits.</p>
         
@@ -336,6 +376,8 @@
       © 2025 Shannon Hunt | In collaboration with <a href="https://watcheratthethreshold.github.io/sketchy-ponderings/">Sketchy Ponderings</a> & <a href="https://watcheratthethreshold.github.io/fairweather/index.html">Fairweather</a>
     </footer>
   </div>
+  
+  <a href="#cards-content" class="back-to-top" title="Back to top">↑</a>
   
   <script>
     // Mist background (consistent with other pages)
@@ -434,6 +476,12 @@
       document.getElementById('oneCardBtn').classList.add('active');
       document.getElementById('threeCardBtn').classList.remove('active');
       drawCards();
+      
+      // Smooth scroll to cards content
+      document.getElementById('cards-content').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
     });
 
     document.getElementById('threeCardBtn').addEventListener('click', () => {
@@ -441,6 +489,28 @@
       document.getElementById('threeCardBtn').classList.add('active');
       document.getElementById('oneCardBtn').classList.remove('active');
       drawCards();
+      
+      // Smooth scroll to cards content
+      document.getElementById('cards-content').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    });
+
+    // Show/hide back-to-top button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.style.display = 'none';
+
+    // Smooth scroll to top when back-to-top is clicked
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
 
     // Initialize with one card
