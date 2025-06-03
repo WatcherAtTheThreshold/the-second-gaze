@@ -9,104 +9,31 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
-    /* Override body styles for cards page */
+    /* Cards page specific body styling */
     body {
-      margin: 0;
       font-family: 'Crimson Text', 'Georgia', serif;
+    }
+
+    /* Cards page main content area with mystical background */
+    .cards-main {
       background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);
       background-attachment: fixed;
       color: #3b2f2f;
-      min-height: 100vh;
+      min-height: 80vh;
       position: relative;
       overflow-x: hidden;
     }
 
-    body::before {
+    .cards-main::before {
       content: '';
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
       pointer-events: none;
-      z-index: -1;
-    }
-
-    /* Header styling to blend with cards aesthetic */
-    header {
-      position: relative;
-      z-index: 10;
-      padding: 1rem 0;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 0.5rem 0;
-      background: linear-gradient(45deg, #ffd89b 0%, #19547b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    header .subtitle {
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 0.9rem;
-      color: #6b5845;
-      margin: 0;
-      opacity: 0.8;
-    }
-
-    .nav-menu {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .nav-menu a {
-      font-family: 'Source Sans Pro', sans-serif;
-      text-decoration: none;
-      color: #5d4e37;
-      font-weight: 400;
-      transition: color 0.3s ease;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .nav-menu a:hover {
-      color: #19547b;
-    }
-
-    /* Footer styling */
-    footer {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      padding: 2rem 0;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      margin-top: 3rem;
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 0.85rem;
-      color: #6b5845;
-    }
-
-    footer a {
-      color: #19547b;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      z-index: 0;
     }
 
     .container {
@@ -376,44 +303,59 @@
     }
   </style>
 </head>
-<body>
-  <div class="mystical-elements">
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-  </div>
-
-  <header>
-    <nav class="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="cards.html">Cards</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <h1>The Second Gaze</h1>
-    <p class="subtitle">Paintings by Shannon Hunt — Faces, spirits, and memory in pigment and light</p>
-  </header>
-
-  <div class="container">
-    <h1 class="cards-title">Draw Your Cards</h1>
-    <p class="intro">Let intuition guide you through the veil of mystery.<br>Choose your path and discover what awaits.</p>
+<body data-mist="mist1.webp">
+  <div class="page-wrapper">
+    <div class="mist-overlay"></div>
     
-    <div class="toggle-container">
-      <button id="oneCardBtn" class="toggle-button active">1 Card</button>
-      <button id="threeCardBtn" class="toggle-button">3 Cards</button>
-    </div>
+    <header>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="cards.html">Cards</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <h1>The Second Gaze</h1>
+      <p class="subtitle">Paintings by Shannon Hunt — Faces, spirits, and memory in pigment and light</p>
+    </header>
 
-    <div class="card-container" id="drawArea"></div>
+    <main class="cards-main">
+      <div class="mystical-elements">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+      </div>
+
+      <div class="container">
+        <h1 class="cards-title">Draw Your Cards</h1>
+        <p class="intro">Let intuition guide you through the veil of mystery.<br>Choose your path and discover what awaits.</p>
+        
+        <div class="toggle-container">
+          <button id="oneCardBtn" class="toggle-button active">1 Card</button>
+          <button id="threeCardBtn" class="toggle-button">3 Cards</button>
+        </div>
+
+        <div class="card-container" id="drawArea"></div>
+      </div>
+    </main>
+
+    <footer>
+      © 2025 Shannon Hunt | In collaboration with <a href="https://watcheratthethreshold.github.io/sketchy-ponderings/">Sketchy Ponderings</a> & <a href="https://watcheratthethreshold.github.io/fairweather/index.html">Fairweather</a>
+    </footer>
   </div>
-
-  <footer>
-    © 2025 Shannon Hunt | In collaboration with <a href="https://watcheratthethreshold.github.io/sketchy-ponderings/">Sketchy Ponderings</a> & <a href="https://watcheratthethreshold.github.io/fairweather/index.html">Fairweather</a>
-  </footer>
 
   <script>
+    // Mist background (consistent with other pages)
+    const mistOverlay = document.querySelector('.mist-overlay');
+    const mistFile = document.body.dataset.mist || 'mist1.webp';
+    mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
+    mistOverlay.style.display = 'none';
+    void mistOverlay.offsetHeight;
+    mistOverlay.style.display = 'block';
+
+    // Cards functionality
     const cards = [
       'MinervasWisdom.webp',
       'MoonGarden-CC.png',
