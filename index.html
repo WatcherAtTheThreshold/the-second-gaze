@@ -10,12 +10,14 @@
  
 <body data-mist="mist1.webp"> 
   <div class="page-wrapper">
-    <div class="mist-overlay"></div> <header>
+    <div class="mist-overlay"></div>
+    
+    <header>
       <nav class="nav-menu">
         <a href="index.html">Home</a>
         <a href="gallery.html">Gallery</a>
+        <a href="cards.html">Cards</a>
         <a href="about.html">About</a>
-        <a href="words.html">Words</a>
         <a href="contact.html">Contact</a>
       </nav>
       <h1>The Second Gaze</h1>
@@ -23,7 +25,6 @@
     </header>
 
     <main class="light-section">
-      
       <section class="gallery" id="gallery">
         <div class="artwork">
           <div class="artwork-image"><img src="images/under-the-aegis-of-inanna.webp" alt="Under the Aegis of Inanna"></div>
@@ -34,24 +35,23 @@
           <div class="caption">Under the Aegis of Ishtar</div>
         </div>
       </section>
-
     </main>
 
     <footer>
-      © 2025 Shannon Hunt | In collaboration with <a href="https://watcheratthethreshold.github.io/sketchy-ponderings/">Sketchy Ponderings</a>
+      © 2025 Shannon Hunt | In collaboration with <a href="https://watcheratthethreshold.github.io/sketchy-ponderings/">Sketchy Ponderings</a> & <a href="https://watcheratthethreshold.github.io/fairweather/index.html">Fairweather</a>
     </footer>
   </div>
+  
   <script>
-// This targets the single mist layer set at the top of the page
-  const mistOverlay = document.querySelector('.mist-overlay');
-  const mistFile = document.body.dataset.mist || 'mist1.webp';
-  mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
+    // This targets the single mist layer set at the top of the page
+    const mistOverlay = document.querySelector('.mist-overlay');
+    const mistFile = document.body.dataset.mist || 'mist1.webp';
+    mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
 
-
-     // Force reflow to help apply background
-  mistOverlay.style.display = 'none';
-  void mistOverlay.offsetHeight; // void ensures it's evaluated as a statement
-  mistOverlay.style.display = 'block';
-</script>
+    // Force reflow to help apply background
+    mistOverlay.style.display = 'none';
+    void mistOverlay.offsetHeight; // void ensures it's evaluated as a statement
+    mistOverlay.style.display = 'block';
+  </script>
 </body>
 </html>
