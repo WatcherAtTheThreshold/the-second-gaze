@@ -15,6 +15,19 @@
       background-attachment: fixed;
       color: #3b2f2f;
       font-family: 'Crimson Text', 'Georgia', serif;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Header and footer transparent to show body gradient */
@@ -29,18 +42,6 @@
       min-height: 80vh;
       position: relative;
       overflow-x: hidden;
-    }
-
-    .cards-main::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
     }
 
     .container {
@@ -334,9 +335,8 @@
     }
   </style>
 </head>
-<body data-mist="mist1.webp">
+<body>
   <div class="page-wrapper">
-    <div class="mist-overlay"></div>
     
     <header>
       <nav class="nav-menu">
@@ -380,15 +380,7 @@
   <a href="#cards-content" class="back-to-top" title="Back to top">↑</a>
   
   <script>
-    // Mist background (consistent with other pages)
-    const mistOverlay = document.querySelector('.mist-overlay');
-    const mistFile = document.body.dataset.mist || 'mist1.webp';
-    mistOverlay.style.backgroundImage = `url('images/${mistFile}')`;
-    mistOverlay.style.display = 'none';
-    void mistOverlay.offsetHeight;
-    mistOverlay.style.display = 'block';
-
-    // Cards functionality
+    // Cards functionality (no mist overlay for this page)
     const cards = [
       'MinervasWisdom.webp',
       'MoonGarden-CC.png',
